@@ -1,0 +1,17 @@
+%{
+int cons=0;
+%}
+digit[0-9]
+%%
+{digit}+"."{digit}+ {cons++;printf("%s is a floating point constant\n",yytext);}
+{digit}+ {cons++;printf("%s is integer constant\n",yytext);}
+%%
+int yywrap(){
+}
+int main()
+{
+printf("enter the code");
+yylex();
+printf("no.of constants:%d\n",cons);
+return 0;
+}
