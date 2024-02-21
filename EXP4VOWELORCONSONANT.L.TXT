@@ -1,0 +1,15 @@
+%{
+int v=0,c=0;
+%}
+%%
+[aeiou AEIOU] {v++;}
+[a-z A-Z] {c++;}
+%%
+int yywrap(){}
+int main()
+{
+printf("\nenter the letter\n");
+yylex();
+printf("number of vowels are:%d\n",v);
+printf("number of consonents are:%d\n",c);
+}
