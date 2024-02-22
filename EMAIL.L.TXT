@@ -1,0 +1,14 @@
+%{
+%}
+%%
+[a-z A-z 0-9 _ .]+"@"[a-z A-Z]+".com" {printf("\n valid mail\n");}
+.+ {printf("\n invalid mail\n");}
+%%
+int yywrap(void){}
+int main()
+{
+printf("enter the mail");
+yylex();
+printf("\n");
+return 0;
+}
